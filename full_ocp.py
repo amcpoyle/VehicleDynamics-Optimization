@@ -127,7 +127,6 @@ def compute_ax(ay, V, init_vals, maximize):
     u = V*ca.cos(beta)
     v = V*ca.tan(beta)
 
-    # slip angles (with correct sign convention: left wheels have lower longitudinal velocity during positive yaw)
     lambda_eps = 1e-3
     lambda_fl = delta - ca.atan2((v + omega*a), (u - omega*(trackwidth/2) + lambda_eps))
     lambda_fr = delta - ca.atan2((v + omega*a), (u + omega*(trackwidth/2) + lambda_eps))
@@ -245,3 +244,4 @@ ax.set_ylabel("ax/g")
 ax.set_title(f"GG Diagram at V={V} m/s")
 fig.show()
 plt.show()
+
